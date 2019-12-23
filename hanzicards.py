@@ -8,7 +8,7 @@ from random import randint
 from hanzilib import hdict
 
 font_path = "simsun.ttc"
-font_path2 = "pinyin.TTF"
+#font_path2 = "pinyin.TTF"
 
 
         
@@ -23,7 +23,7 @@ class Card(RelativeLayout):
         self.btn.bind(on_press=self.flip)
         self.add_widget(self.btn)
 
-        self.btn2 = Button(text=hdict[self.r][1], size_hint_y=0.9, pos_hint={'top':1}, background_normal='', color=(0,0,0,1), font_name=font_path2, font_size=40)
+        self.btn2 = Button(text=hdict[self.r][1], size_hint_y=0.9, pos_hint={'top':1}, background_normal='', color=(0,0,0,1),) #font_name=font_path2, font_size=40)
         self.btn2.bind(on_press=self.flip2)
 
         self.nextbtn = Button(text="Next", size_hint_y=0.1, pos_hint={'bottom':0})
@@ -39,7 +39,7 @@ class Card(RelativeLayout):
         return self.r
     def flip(self, instance):
         self.remove_widget(self.btn2)
-        self.btn2 = Button(text=hdict[self.r][1], size_hint_y=0.9, pos_hint={'top':1}, background_normal='', color=(0,0,0,1), font_name=font_path2, font_size=40)
+        self.btn2 = Button(text=hdict[self.r][1], size_hint_y=0.9, pos_hint={'top':1}, background_normal='', color=(0,0,0,1),) #font_name=font_path2, font_size=40)
         self.btn2.bind(on_press=self.flip2)
         self.add_widget(self.btn2)
     def flip2(self, instance):
